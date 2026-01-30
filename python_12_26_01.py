@@ -124,15 +124,18 @@
 #         print("The number is prime")
 
 
-import random
-x = random.randint(1, 10)
+# import random
+# x = random.randint(1, 10)
+#
+# while True:
+#     ans = int(input("Enter a number: "))
+#     if ans == x:
+#         print("Congratulations!")
+#         break
 
-while True:
-    ans = int(input("Enter a number: "))
-    if ans == x:
-        print("Congratulations!")
-        break
 
+# number = input('Number>>')
+# print(sum(map(int, number)))
 
 
 
