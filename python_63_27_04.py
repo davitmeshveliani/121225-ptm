@@ -437,25 +437,27 @@
 
 
 
-def user_role(role):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            data = func(*args, **kwargs)
-            result = [line for line in data if line.startswith(role)]
-            return result
-        return wrapper
-    return decorator
-
-
-@user_role('admin')
-def read_data_file(filename):
-    with open(filename, 'r') as f:
-        for line in f:
-            yield line.strip()
-
-
-for item in read_data_file('python_63.txt'):
-    print(item)
+# def user_role(role):
+#     def decorator(func):
+#         def wrapper(*args, **kwargs):
+#             data = func(*args, **kwargs)
+#             result = [line for line in data if line.startswith(role)]
+#             return result
+#         return wrapper
+#     return decorator
+#
+#
+# from typing import Generator
+# @user_role('admin')
+# def read_data_file(filename) -> Generator[str, None, None]:
+#     with open(filename, 'r') as f:
+#         for line in f:
+#             yield line.strip()
+#
+#
+# for item in read_data_file('python_63.txt'):
+#     print(item)
+#
 
 
 
