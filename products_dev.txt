@@ -1,0 +1,3 @@
+Product(name=banana, price=100)
+Product(name=apple, price=20.50)
+Product(name=kiwi, price=50.45)

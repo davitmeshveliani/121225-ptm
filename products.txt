@@ -1,0 +1,3 @@
+banana; 100
+apple; 20.50
+kiwi; 50.45
