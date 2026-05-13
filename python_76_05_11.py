@@ -113,6 +113,69 @@ from abc import ABC, abstractmethod, abstractproperty
 #
 
 
+# class Box:
+#     def __init__(self, x, y, z):
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#
+#     def volume(self):
+#         return self.x * self.y * self.z
+#
+#     def __gt__(self, other):
+#         return self.volume() > other.volume()
+#
+#     def __ge__(self, other):
+#         return self.volume() >= other.volume()
+#
+#     def __eq__(self, other):
+#         return self.volume() == other.volume()
+#
+#     def __le__(self, other):
+#         return self.volume() <= other.volume()
+#
+#     def __lt__(self, other):
+#         return self.volume() < other.volume()
+#
+#     def __ne__(self, other):
+#         return self.volume() != other.volume()
+#
+#     def __str__(self):
+#         return f'{self.x} x {self.y} x {self.z}'
+#
+#
+# box_1 = Box(10, 2, 3)
+# print(box_1)
+#
+# box_2 = Box(2, 3, 4)
+# print(box_2)
+#
+# # print(box_1.volume() > box_2.volume())
+#
+# print(box_1 > box_2) # box_1.__gt__(box_2)
+#
+#
+# import random
+
+# boxes = [Box(random.randint(1, 10), random.randint(1, 10), random.randint(1, 10)) for _ in range(10)]
+# print(*boxes, sep='\n')
+# print('-' * 50)
+# print(min(boxes))
+# print(max(boxes))
+# print('-' * 50)
+# boxes.sort()
+# print(*boxes, sep='\n')
+#
+
+
+# x = 4 + 5
+# x = (4).__add__(5)
+# print(x)
+
+
+from functools import total_ordering
+
+@total_ordering
 class Box:
     def __init__(self, x, y, z):
         self.x = x
@@ -125,20 +188,8 @@ class Box:
     def __gt__(self, other):
         return self.volume() > other.volume()
 
-    def __ge__(self, other):
-        return self.volume() >= other.volume()
-
     def __eq__(self, other):
         return self.volume() == other.volume()
-
-    def __le__(self, other):
-        return self.volume() <= other.volume()
-
-    def __lt__(self, other):
-        return self.volume() < other.volume()
-
-    def __ne__(self, other):
-        return self.volume() != other.volume()
 
     def __str__(self):
         return f'{self.x} x {self.y} x {self.z}'
@@ -150,24 +201,9 @@ print(box_1)
 box_2 = Box(2, 3, 4)
 print(box_2)
 
-# print(box_1.volume() > box_2.volume())
-
-print(box_1 > box_2) # box_1.__gt__(box_2)
-
-
-import random
-
-boxes = [Box(random.randint(1, 10), random.randint(1, 10), random.randint(1, 10)) for _ in range(10)]
-print(*boxes, sep='\n')
-print('-' * 50)
-print(min(boxes))
-print(max(boxes))
-print('-' * 50)
-boxes.sort()
-print(*boxes, sep='\n')
-
-
-
-# x = 4 + 5
-# x = (4).__add__(5)
-# print(x)
+print(box_1 > box_2)
+print(box_1 < box_2)
+print(box_1 >= box_2)
+print(box_1 <= box_2)
+print(box_1 == box_2)
+print(box_1 != box_2)
